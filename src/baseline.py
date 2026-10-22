@@ -25,7 +25,9 @@ def main() -> None:
     maximum = 0
     minimum = 0
     average = 0.0
-
+    maximum = max(numbers)
+    minimum = min(numbers)
+    average = sum(numbers)/10
     print(f"最大值: {maximum}")
     print(f"最小值: {minimum}")
     print(f"平均值: {average:.2f}")
