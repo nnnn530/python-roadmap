@@ -1,0 +1,6 @@
+the quick brown fox jumps over the lazy dog
+python is a clean readable language with batteries included
+a file is a stream of bytes until you decode it
+text mode encoding matters more than you think
+the lazy dog sleeps while the quick fox runs
+reading a file twice from the same handle gives you nothing
