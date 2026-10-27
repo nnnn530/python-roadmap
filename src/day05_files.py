@@ -100,7 +100,8 @@ def clean_words(text):
       - 去标点可以用 w.strip(",.!?;:")，转小写用 w.lower()
       - 这就是廖雪峰「列表生成式」那一节的主场：带 if 的写法 [x for x in xs if 条件]
     """
-    pass
+    
+    return [c for w in text.split() if (c := w.lower().strip(",.!?;:"))]
 
 
 if __name__ == "__main__":
@@ -116,7 +117,7 @@ if __name__ == "__main__":
     # 如果 except 没生效，上面这行会直接抛异常，程序在此结束，"全部通过"不会打印
     assert csv_roundtrip(DATA / "out.csv", [["a", "1"], ["b", "2"]]) is True
     assert csv_roundtrip(DATA / "out.csv", [["x,y", "3"]]) is True     # 带逗号，测转义
-    # 反面教材：下面这行是故意写错的，用来验证函数真返回 bool 而不是返回列表。
-    # 验证完必须注释掉，否则脚本每次都停在这里。跑法：取消注释 → 看它报错 → 再注释回去。
-    # assert csv_roundtrip(DATA / "out.csv", [["a", "1"]]) == [["a", "1"]]
+    assert clean_words("The FOX, the dog!") == ['the', 'fox', 'the', 'dog']
+    assert clean_words("") == []
+    assert clean_words("!!! ...") == []
     print("全部通过")
