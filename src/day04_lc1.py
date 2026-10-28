@@ -26,8 +26,8 @@ def two_sum(nums, target):
     """
     d = {}
     for i in range(len(nums)):
-        if (target-nums[i]) in d:
-            return [d[target-nums[i]],i]
+        if target - nums[i] in d:
+            return [d[target - nums[i]],i]
         d[nums[i]] = i
     return []
             
@@ -40,6 +40,6 @@ if __name__ == "__main__":
     # 2. TODO: 补两条 —— 一条考「同一个元素不能重复用」，一条考「答案在数组末尾」
     #    参考数据：[3, 3] 目标 6 ／ [3, 2, 4] 目标 6
     assert two_sum([3, 2, 4], 6) == [1, 2]
-    
+    assert two_sum([3, 3], 6) == [0, 1]
 
     print("全部通过")
