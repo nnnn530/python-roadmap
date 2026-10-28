@@ -9,3 +9,6 @@ env/
 .env
 data/*.csv
 .DS_Store
+
+# 程序跑出来的输出文件，不进仓库
+project/word_freq/out.json
